@@ -39,7 +39,7 @@ int main() {
 
     // Hasil 
     for(int i = 0; i < n; i++) {
-        if(!remove[i]) {
+        if(remove[i]) {
             printf("%c", s[i]);
         }
     }
