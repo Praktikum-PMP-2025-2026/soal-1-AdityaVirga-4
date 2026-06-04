@@ -10,29 +10,29 @@ int main() {
     int remove[1005] = {0}; 
 
     // Mencari ')'
-    int open_count = 0;
+    int kurung_tutup = 0;
     for(int i = 0; i < n; i++) {
         if(s[i] == '(') {
-            open_count++;
+            kurung_tutup++;
         } else if(s[i] == ')') {
-            if(open_count == 0) {
+            if(kurung_tutup == 0) {
                 remove[i] = 1; 
             } else {
-                open_count--;
+                kurung_tutup--;
             }
         }
     }
 
     // Mencari '('
-    int close_count = 0;
+    int kurung_buka = 0;
     for(int i = n - 1; i >= 0; i--) {
         if(s[i] == ')') {
-            close_count++;
+            kurung_buka++;
         } else if(s[i] == '(') {
-            if(close_count == 0) {
+            if(kurung_buka == 0) {
                 remove[i] = 1; 
             } else {
-                close_count--;
+                kurung_buka--;
             }
         }
     }
